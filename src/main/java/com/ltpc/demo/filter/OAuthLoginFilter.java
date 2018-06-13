@@ -78,7 +78,6 @@ public class OAuthLoginFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession();
-        String uri = req.getRequestURI();
 
         String code = request.getParameter("code");
         SSOUserInfo clientUser = null;
@@ -88,6 +87,11 @@ public class OAuthLoginFilter implements Filter {
         }else {
             auth(req, res);
             return;
+        }
+
+        if(clientUser!= null) {
+            request.setAttribute("ssoUser",clientUser);
+            request.setAttribute("loginName",clientUser.getLoginName());
         }
 
         // 若无法获取用户信息，则直接登录
@@ -138,8 +142,12 @@ public class OAuthLoginFilter implements Filter {
         params.put("access_token", accessToken.getAccessToken());
         Map<String,String> head = new HashMap<>();
         head.put("Content-Type","application/json");
-        String resutl = HttpCustomUtil.doGetSSL(OAUTH_SER_URL+PROFILE_URL,head,params);
-        System.out.println("the user profile:"+resutl);
+        String result = HttpCustomUtil.doGetSSL(OAUTH_SER_URL+PROFILE_URL,head,params);
+        System.out.println("the user profile:"+result);
+        if(StringUtils.isBlank(result)){
+            return clientUser;
+        }
+        clientUser = JSONObject.parseObject(result,SSOUserInfo.class);
         return clientUser;
     }
 
