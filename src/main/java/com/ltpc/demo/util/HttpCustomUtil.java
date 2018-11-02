@@ -335,7 +335,7 @@ public class HttpCustomUtil {
         }
     }
 
-    public static String doGetSSL(String urlAddr, Map<String, String> headers,Map<String, String> param) {
+    public static String doGetSSL(String urlAddr, Map<String, String> param, Map<String, String> headers) {
         Registry<ConnectionSocketFactory> socketFactoryRegistry = RegistryBuilder.<ConnectionSocketFactory> create()
                 .register("http", PlainConnectionSocketFactory.INSTANCE).register("https", createSSLConnSocketFactory())
                 .build();

@@ -142,7 +142,8 @@ public class OAuthLoginFilter implements Filter {
         params.put("access_token", accessToken.getAccessToken());
         Map<String,String> head = new HashMap<>();
         head.put("Content-Type","application/json");
-        String result = HttpCustomUtil.doGetSSL(OAUTH_SER_URL+PROFILE_URL,head,params);
+//        String result = HttpCustomUtil.doGetSSL(OAUTH_SER_URL+PROFILE_URL,params,head);
+        String result = HttpCustomUtil.doGet(OAUTH_SER_URL+PROFILE_URL,params,head);
         System.out.println("the user profile:"+result);
         if(StringUtils.isBlank(result)){
             return clientUser;
@@ -188,6 +189,8 @@ public class OAuthLoginFilter implements Filter {
         LOGGER.info("get accessToken params:{}",sb);
         String result = HttpCustomUtil.doPostSSL(OAUTH_SER_URL+TOKEN_URL
                 +sb.toString(),null, null);
+//        String result = HttpCustomUtil.doPostSSL("http://192.168.1.5:8080/uac"+TOKEN_URL
+//                +sb.toString(),null, null);
         LOGGER.info("get accessToken result:{}",result);
         JSONObject tokentObj = StringUtils.isBlank(result)?null:JSONObject.parseObject(result);
         if(tokentObj==null || StringUtils.isBlank(tokentObj.getString("access_token"))){
