@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.ltpc.demo.Exception.BusinessException;
 import com.ltpc.demo.oauth.model.AccessToken;
 import com.ltpc.demo.oauth.model.SSOUserInfo;
-import com.ltpc.demo.util.HttpCustomUtil;
+import com.ltpc.demo.oauth.util.HttpCustomUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
