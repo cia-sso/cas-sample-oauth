@@ -1,4 +1,4 @@
-package com.ltpc.demo.util;
+package com.ltpc.demo.oauth.util;
 
 import com.ltpc.demo.Exception.PaasRuntimeException;
 import org.apache.http.HttpEntity;

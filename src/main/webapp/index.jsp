@@ -4,7 +4,7 @@
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.List" %>
 <%@ page import="org.jasig.cas.client.authentication.AttributePrincipal" %>
-<%@ page import="com.ltpc.demo.model.SSOUserInfo" %>
+<%@ page import="com.ltpc.demo.oauth.model.SSOUserInfo" %>
 <%@ page import="java.lang.reflect.Field" %>
 <%@ page import="java.lang.reflect.Method" %>
 

@@ -1,4 +1,4 @@
-package com.ltpc.demo.model;
+package com.ltpc.demo.oauth.model;
 
 /**
  * Created with IntelliJ IDEA.

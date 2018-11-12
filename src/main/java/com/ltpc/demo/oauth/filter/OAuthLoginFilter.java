@@ -1,9 +1,9 @@
-package com.ltpc.demo.filter;
+package com.ltpc.demo.oauth.filter;
 
 import com.alibaba.fastjson.JSONObject;
 import com.ltpc.demo.Exception.BusinessException;
-import com.ltpc.demo.model.AccessToken;
-import com.ltpc.demo.model.SSOUserInfo;
+import com.ltpc.demo.oauth.model.AccessToken;
+import com.ltpc.demo.oauth.model.SSOUserInfo;
 import com.ltpc.demo.util.HttpCustomUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -14,12 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.net.URLEncoder;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

@@ -12,7 +12,7 @@
     <filter>
         <filter-name>oauth Authentication Filter</filter-name>
         <!--<filter-class>org.jasig.cas.client.authentication.Saml11AuthenticationFilter</filter-class>-->
-        <filter-class>com.ltpc.demo.filter.OAuthLoginFilter</filter-class>
+        <filter-class>com.ltpc.demo.oauth.filter.OAuthLoginFilter</filter-class>
         <init-param>
             <param-name>oauthSerUrl</param-name>
             <param-value>http://localhost:8080/uac</param-value>
