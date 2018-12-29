@@ -16,6 +16,6 @@
 <hr>
 
 <p>
-    <a href="userInfo.jsp" title="Click here to login">用户信息</a></p>
+    <a href="userInfo.jsp" title="Click here to login">登录</a></p>
 </body>
 </html>

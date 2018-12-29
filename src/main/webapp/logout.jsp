@@ -8,7 +8,7 @@
 <%
     session.invalidate();
     String serviceUrl = URLEncoder.encode("http://localhost:8084/index.jsp","UTF-8");
-    String site = new String("http://cobp-dev2:28081/uac/logout?service="+serviceUrl);
+    String site = "http://localhost:8080/uac/logout?service="+serviceUrl;
     response.setStatus(response.SC_MOVED_TEMPORARILY);
     response.setHeader("Location", site);
 %>
